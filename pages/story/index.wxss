@@ -1,0 +1,25 @@
+/**index.wxss**/
+.section{
+  padding: 0 20rpx;
+}
+.flex-item{
+  display: flex;
+  flex-direction:row;
+}
+.flex-item + .flex-item{
+  margin-top: 30rpx;
+}
+.section__img{
+  width: 180rpx;
+  height: 160rpx;
+}
+.section__container{
+  padding: 8rpx 0 8rpx 15rpx;
+  width: 72%;
+}
+.section__container .title{
+  font-size: 36rpx;
+}
+.section__container .desc{
+  font-size: 28rpx;
+}

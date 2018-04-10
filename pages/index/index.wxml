@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="flex-item" wx:for="{{list}}" wx:for-item="item" data-id="{{item.id}}" bindtap="urlItem">
+      <view class="section__img">
+        <image class="response-img" src="{{item.img}}"></image>
+      </view>
+      <view class="section__container">
+        <view class="title nowrap">{{item.title}}</view>
+        <view class="desc wrap2">{{item.text}}</view>
+      </view> 
+    </view>
+  </view>
+</view>
+          
