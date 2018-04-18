@@ -23,4 +23,5 @@
   display: -webkit-box;
   height: 84rpx;
   line-height:42rpx;
+  word-break: break-all;
 }

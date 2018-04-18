@@ -10,6 +10,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        //console.log(res)
       }
     })
     // 获取用户信息
@@ -20,6 +21,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
+              //console.log(res);
               this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -34,6 +36,30 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    host: 'http://ourlingy.com/data/tp5/api/'
+  },
+  globalAjax(url,postData,success,fail,over){
+    var _self = this
+    wx.request({
+      url: _self.globalData.host + url,
+      data: postData,
+      method: 'POST',
+      success:(res)=>{
+        if(typeof success == 'function'){
+          success(res);
+        }
+      },
+      fail: (err)=>{
+        if(typeof fail == 'function'){
+          fail(err);
+        }
+      },
+      complete: (over)=>{
+        if(typeof over == 'function'){
+          over(over);
+        }
+      }
+    })
   }
 })

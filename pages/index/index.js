@@ -18,6 +18,7 @@ const app = getApp()
 
 Page({
   data: {// 参与页面渲染的数据
+    user: {},
     list:[
       {id: "1",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题1",text: 'aspectFit：保持纵横比缩放图片'},
       {id: "2",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题2",text: 'aspectFit：保持纵横比缩放图片'},
@@ -28,7 +29,10 @@ Page({
     ]
   },
   onLoad: function(options) {
-    
+    this.data.user = getApp().globalData.userInfo
+    var url = 'test.php',
+      data = {}
+    //getApp().globalAjax(url,data);
   },
   onReady: function() {
     // Do something when page ready.

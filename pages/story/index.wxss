@@ -1,25 +1,38 @@
+@import "../../html-view/index.wxss";
 /**index.wxss**/
 .section{
-  padding: 0 20rpx;
+  padding: 20rpx;
+  background: #D4D4D4;
 }
-.flex-item{
-  display: flex;
-  flex-direction:row;
-}
-.flex-item + .flex-item{
-  margin-top: 30rpx;
-}
-.section__img{
-  width: 180rpx;
-  height: 160rpx;
-}
-.section__container{
-  padding: 8rpx 0 8rpx 15rpx;
-  width: 72%;
-}
-.section__container .title{
-  font-size: 36rpx;
-}
-.section__container .desc{
+.container{
+  padding: 0;
   font-size: 28rpx;
+}
+.story-title{
+  font-size: 36rpx;
+  background: #C3C4B4;
+  padding: 20rpx;
+  flex:1;
+}
+.story-info{
+  display: -webkit-flex;
+  display: flex;
+  background: #D4D4D4;
+}
+.story-info .item{
+  padding: 20rpx;
+  color: #666;
+  flex: 1;
+}
+.story-info .time{
+  text-align: right;
+}
+.desc{
+  background: #b7b998;
+  padding: 20rpx;
+}
+.section img{
+  display: block;
+  width: 100%;
+  height: auto;
 }
