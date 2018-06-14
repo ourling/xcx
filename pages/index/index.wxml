@@ -1,13 +1,13 @@
 <!--index.wxml-->
 <view class="container">
   <view class="section">
-    <view class="flex-item" wx:for="{{list}}" wx:for-item="item" data-id="{{item.id}}" bindtap="urlItem" wx:key="{{item.id}}">
+    <view class="flex-item" wx:for="{{list}}" wx:for-item="item" data-id="{{item.storyId}}" bindtap="urlItem" wx:key="{{item.storyId}}">
       <view class="section__img">
-        <image class="response-img" src="{{item.img}}"></image>
+        <image class="response-img" src="{{item.cover}}"></image>
       </view>
       <view class="section__container">
         <view class="title nowrap">{{item.title}}</view>
-        <view class="desc wrap2">{{item.text}}</view>
+        <view class="desc wrap2">{{item.desc}}</view>
       </view>
     </view>
   </view>

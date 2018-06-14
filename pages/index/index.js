@@ -19,20 +19,28 @@ const app = getApp()
 Page({
   data: {// 参与页面渲染的数据
     user: {},
-    list:[
-      {id: "1",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题1",text: 'aspectFit：保持纵横比缩放图片'},
-      {id: "2",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题2",text: 'aspectFit：保持纵横比缩放图片'},
-      {id: "3",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题3",text: 'aspectFit：保持纵横比缩放图片'},
-      {id: "4",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题4",text: 'aspectFit：保持纵横比缩放图片'},
-      {id: "5",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题5",text: 'aspectFit：保持纵横比缩放图片'},
-      {id: "6",img: 'http://ozjrt1c1f.bkt.clouddn.com/9cbe3068c7ed8a39aa7ae73c5969f446.png',title: "标题6标题6标题6标题6标题6标题6标题6标题6标题6标题6",text: 'aspectFit：保持纵横比缩放图片aspectFit：保持纵横比缩放图片aspectFit：保持纵横比缩放图片aspectFit：保持纵横比缩放图片aspectFit：保持纵横比缩放图片aspectFit：保持纵横比缩放图片'}
-    ]
+    list:[]
   },
-  onLoad: function(options) {
+  onLoad: function(options) {  
     this.data.user = getApp().globalData.userInfo
-    var url = 'test.php',
-      data = {}
-    //getApp().globalAjax(url,data);
+    var url = 'xcx/story_list.php',
+      data = {
+        page: 1,
+        size: 6
+      },
+      success = (res)=>{
+        res = res.data
+        if(res.isSuccess){
+          this.setData({
+            list: res.list
+          })
+          // this.data.list = res.list
+          console.log(this.data.list)
+        }else{
+          alert('获取列表失败')
+        }
+      }
+    getApp().globalAjax(url,data,success);
   },
   onReady: function() {
     // Do something when page ready.

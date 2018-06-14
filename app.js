@@ -45,7 +45,10 @@ App({
       url: _self.globalData.host + url,
       data: postData,
       method: 'POST',
-      success:(res)=>{
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"        
+      },
+      success:(res)=>{      
         if(typeof success == 'function'){
           success(res);
         }
